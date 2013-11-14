@@ -50,7 +50,8 @@
 
 /* Begin PBXFileReference section */
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		0E4FF3421834C6DD00E7CD66 /* FMDatabaseLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseLogger.h; sourceTree = "<group>"; };
+		0E4FF3451834D16F00E7CD66 /* FMDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseLogger.h; path = src/FMDatabaseLogger.h; sourceTree = "<group>"; };
+		0E4FF3461834D17B00E7CD66 /* fmdb.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fmdb.podspec; sourceTree = "<group>"; };
 		32A70AAB03705E1F00C91783 /* fmdb_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmdb_Prefix.pch; sourceTree = "<group>"; };
 		831DE6FD175B7C9C001F7317 /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		8DD76FA10486AA7600D96B5E /* fmdb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fmdb; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +103,7 @@
 		08FB7794FE84155DC02AAC07 /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
+				0E4FF3461834D17B00E7CD66 /* fmdb.podspec */,
 				831DE6FD175B7C9C001F7317 /* README.markdown */,
 				CC8C138B0E3135C400FBE1E7 /* LICENSE.txt */,
 				CC8C138A0E3135C400FBE1E7 /* CHANGES_AND_TODO_LIST.txt */,
@@ -119,6 +121,7 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0E4FF3451834D16F00E7CD66 /* FMDatabaseLogger.h */,
 				CC47A00D148581E9002CCDAB /* FMDatabaseQueue.h */,
 				CC47A00E148581E9002CCDAB /* FMDatabaseQueue.m */,
 				CC50F2CC0DF9183600E4AAAE /* FMDatabaseAdditions.h */,
@@ -131,7 +134,6 @@
 				CC9E4EB813B31188005F9210 /* FMDatabasePool.m */,
 				32A70AAB03705E1F00C91783 /* fmdb_Prefix.pch */,
 				CCC24EBE0A13E34D00A6D3E3 /* fmdb.m */,
-				0E4FF3421834C6DD00E7CD66 /* FMDatabaseLogger.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
