@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
   s.subspec 'lumberjack' do |sp|
     sp.dependency 'CocoaLumberjack'
     sp.dependency 'fmdb/core'
-    sp.compiler_flags = '-DUSE_LUMBERJACK'
+    sp.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'USE_LUMBERJACK' }
   end
 end
