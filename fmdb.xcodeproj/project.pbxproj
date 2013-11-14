@@ -50,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0E4FF3421834C6DD00E7CD66 /* FMDatabaseLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseLogger.h; sourceTree = "<group>"; };
 		32A70AAB03705E1F00C91783 /* fmdb_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmdb_Prefix.pch; sourceTree = "<group>"; };
 		831DE6FD175B7C9C001F7317 /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		8DD76FA10486AA7600D96B5E /* fmdb */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fmdb; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +131,7 @@
 				CC9E4EB813B31188005F9210 /* FMDatabasePool.m */,
 				32A70AAB03705E1F00C91783 /* fmdb_Prefix.pch */,
 				CCC24EBE0A13E34D00A6D3E3 /* fmdb.m */,
+				0E4FF3421834C6DD00E7CD66 /* FMDatabaseLogger.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";

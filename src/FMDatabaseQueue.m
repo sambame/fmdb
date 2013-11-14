@@ -9,6 +9,10 @@
 #import "FMDatabaseQueue.h"
 #import "FMDatabase.h"
 
+#ifdef USE_LUMBERJACK
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#endif
+
 /*
  
  Note: we call [self retain]; before using dispatch_sync, just incase 
@@ -45,7 +49,7 @@
         FMDBRetain(_db);
         
         if (![_db open]) {
-            NSLog(@"Could not create database queue for path %@", aPath);
+            DDLogError(@"Could not create database queue for path %@", aPath);
             FMDBRelease(self);
             return 0x00;
         }
@@ -85,10 +89,11 @@
     FMDBRelease(self);
     };
     
-    if (dispatch_get_specific(_dbQueueTag))
- 	internalBlock();
-	else
+    if (dispatch_get_specific(_dbQueueTag)) {
+        internalBlock();
+    } else {
 		dispatch_sync(_queue, internalBlock);
+    }
 }
 
 - (FMDatabase*)database {
@@ -96,7 +101,7 @@
         _db = FMDBReturnRetained([FMDatabase databaseWithPath:_path]);
         
         if (![_db open]) {
-            NSLog(@"FMDatabaseQueue could not reopen database for path %@", _path);
+            DDLogError(@"FMDatabaseQueue could not reopen database for path %@", _path);
             FMDBRelease(_db);
             _db  = 0x00;
             return 0x00;
