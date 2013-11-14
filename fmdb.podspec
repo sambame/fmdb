@@ -7,12 +7,17 @@ Pod::Spec.new do |s|
   s.author   = { 'August Mueller' => 'gus@flyingmeat.com' }
   s.source   = { :git => 'https://github.com/sambame/fmdb.git', :tag => '2.2' }
 
-  s.source_files = 'src/FM*.{h,m}'
-  s.exclude_files = 'src/fmdb\.m',
-  s.library = 'sqlite3'
-  
+  s.default_subspec = 'core'
+
+  s.subspec 'core' do |sp|
+    sp.source_files = 'src/FM*.{h,m}'
+    sp.exclude_files = 'src/fmdb\.m',
+    sp.library = 'sqlite3'
+  end
+
   s.subspec 'lumberjack' do |sp|
     sp.dependency 'CocoaLumberjack'
+    sp.dependency 'fmdb/core'
     sp.compiler_flags = '-DUSE_LUMBERJACK'
   end
 end
