@@ -931,7 +931,11 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         }
         else {
             // wtf?
-            DDLogError(@"Unknown error calling sqlite3_step (%d: %s) eu Query: %@", rc, sqlite3_errmsg(_db), sql);
+            int extendedErrorCode = sqlite3_extended_errcode(_db);
+            const char *error = sqlite3_errmsg(_db);
+
+            DDLogError(@"Unknown error calling sqlite3_step (%d: %s) extended error: (%d) eu Query: %@",
+                       rc, error, extendedErrorCode, sql);
         }
         
     } while (retry);
