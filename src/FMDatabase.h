@@ -2,7 +2,6 @@
 #import "sqlite3.h"
 #import "FMResultSet.h"
 #import "FMDatabasePool.h"
-#import "FMDatabaseLogger.h"
 
 #if ! __has_feature(objc_arc)
     #define FMDBAutorelease(__v) ([__v autorelease]);

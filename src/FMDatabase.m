@@ -1,8 +1,9 @@
 #import "FMDatabase.h"
 #import "unistd.h"
 #import <objc/runtime.h>
+#import "FMDatabaseLogger.h"
 
-#ifdef USE_LUMBERJACK
+#ifdef FMDB_USE_LUMBERJACK
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif
 

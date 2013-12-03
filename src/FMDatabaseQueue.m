@@ -8,8 +8,9 @@
 
 #import "FMDatabaseQueue.h"
 #import "FMDatabase.h"
+#import "FMDatabaseLogger.h"
 
-#ifdef USE_LUMBERJACK
+#ifdef FMDB_USE_LUMBERJACK
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif
 
@@ -21,10 +22,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
  
  */
 
-@interface FMDatabaseQueue () {
-    void *_dbQueueTag;
-}
-@end
 
 @implementation FMDatabaseQueue
 

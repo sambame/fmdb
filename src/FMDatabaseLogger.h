@@ -9,7 +9,7 @@
 #ifndef fmdb_FMDatabaseLogger_h
 #define fmdb_FMDatabaseLogger_h
 
-#ifndef USE_LUMBERJACK
+#ifndef FMDB_USE_LUMBERJACK
     #define DDLogError NSLog
     #define DDLogWarn NSLog
     #define DDLogInfo NSLog

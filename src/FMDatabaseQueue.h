@@ -65,6 +65,7 @@
     NSString            *_path;
     dispatch_queue_t    _queue;
     FMDatabase          *_db;
+    void *_dbQueueTag;
 }
 
 @property (atomic, retain) NSString *path;
