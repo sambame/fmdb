@@ -903,7 +903,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         rc      = sqlite3_step(pStmt);
         retry   = NO;
         
-        if (SQLITE_BUSY == rc || SQLITE_LOCKED == rc) {
+        if (SQLITE_BUSY == rc || SQLITE_LOCKED == rc || SQLITE_IOERR == rc) {
             // this will happen if the db is locked, like if we are doing an update or insert.
             // in that case, retry the step... and maybe wait just 10 milliseconds.
             retry = YES;
