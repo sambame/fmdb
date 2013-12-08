@@ -116,7 +116,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         block(db);
         
         if ([db hasOpenResultSets]) {
-            NSLog(@"Warning: there is at least one open result set around after performing [FMDatabaseQueue inDatabase:]");
+            DDLogWarn(@"Warning: there is at least one open result set around after performing [FMDatabaseQueue inDatabase:]");
         }
     
     FMDBRelease(self);
