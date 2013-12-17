@@ -108,7 +108,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     return _db;
 }
 
-- (void)inDatabase:(void (^)(FMDatabase *db))block {
+- (void)inDatabase:(void (^)(FMDatabase *db))block async:(BOOL)async {
     FMDBRetain(self);
     
     dispatch_block_t internalBlock =  ^{
@@ -116,16 +116,25 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         block(db);
         
         if ([db hasOpenResultSets]) {
-            NSLog(@"Warning: there is at least one open result set around after performing [FMDatabaseQueue inDatabase:]");
+            DDLogWarn(@"Warning: there is at least one open result set around after performing [FMDatabaseQueue inDatabase:]");
         }
     
     FMDBRelease(self);
     };
+    
+    if (async) {
+        dispatch_async(_queue, internalBlock);
+    } else {
+        if (dispatch_get_specific(_dbQueueTag)) {
+            internalBlock();
+        } else {
+            dispatch_sync(_queue, internalBlock);
+        }
+    }
+}
 
-    if (dispatch_get_specific(_dbQueueTag))
-		internalBlock();
-	else
-		dispatch_sync(_queue, internalBlock);
+- (void)inDatabase:(void (^)(FMDatabase *db))block {
+    [self inDatabase:block async:NO];
 }
 
 

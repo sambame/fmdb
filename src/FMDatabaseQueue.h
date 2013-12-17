@@ -106,7 +106,8 @@
  */
 
 - (void)inDatabase:(void (^)(FMDatabase *db))block;
-
+- (void)inDatabase:(void (^)(FMDatabase *db))block async:(BOOL)async;
+    
 /** Synchronously perform database operations on queue, using transactions.
 
  @param block The code to be run on the queue of `FMDatabaseQueue`
